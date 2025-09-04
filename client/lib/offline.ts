@@ -58,7 +58,9 @@ async function syncWithSupabase() {
           symptoms: item.payload.symptoms ?? null,
           village: item.payload.village ?? null,
           photo: item.payload.photo ?? null,
-          created_at: new Date(item.payload.createdAt ?? Date.now()).toISOString(),
+          created_at: new Date(
+            item.payload.createdAt ?? Date.now(),
+          ).toISOString(),
         });
         if (error) throw error;
       } else {
@@ -67,7 +69,9 @@ async function syncWithSupabase() {
           turbidity: item.payload.turbidity ?? null,
           contamination: item.payload.contamination ?? null,
           location: item.payload.location ?? null,
-          created_at: new Date(item.payload.createdAt ?? Date.now()).toISOString(),
+          created_at: new Date(
+            item.payload.createdAt ?? Date.now(),
+          ).toISOString(),
         });
         if (error) throw error;
       }
@@ -87,7 +91,8 @@ export async function syncWithServer(baseUrl = "") {
   const items = await getAllQueued();
   for (const item of items) {
     try {
-      const endpoint = item.type === "healthReport" ? "/api/health-report" : "/api/water-test";
+      const endpoint =
+        item.type === "healthReport" ? "/api/health-report" : "/api/water-test";
       const res = await fetch(baseUrl + endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

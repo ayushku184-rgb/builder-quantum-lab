@@ -69,8 +69,12 @@ export function createServer() {
     try {
       if (hasSupabaseServer && supabaseServer) {
         const [{ count: cases }, { count: water }] = await Promise.all([
-          supabaseServer.from("health_reports").select("id", { count: "exact", head: true }),
-          supabaseServer.from("water_tests").select("id", { count: "exact", head: true }),
+          supabaseServer
+            .from("health_reports")
+            .select("id", { count: "exact", head: true }),
+          supabaseServer
+            .from("water_tests")
+            .select("id", { count: "exact", head: true }),
         ]);
         const totalCases = cases ?? 0;
         const totalWater = water ?? 0;
@@ -78,21 +82,31 @@ export function createServer() {
           cases: totalCases,
           water: totalWater,
           activeAlerts: 0,
-          highRiskVillages: Math.min(8, Math.max(1, Math.floor((totalCases + totalWater) / 5))),
+          highRiskVillages: Math.min(
+            8,
+            Math.max(1, Math.floor((totalCases + totalWater) / 5)),
+          ),
         });
         return;
       }
 
       const cases = memory.healthReports.length;
       const water = memory.waterTests.length;
-      const diarrheaCount = memory.healthReports.filter((r) => r.symptoms?.includes("Diarrhea")).length;
-      const contaminationYes = memory.waterTests.some((w) => w.contamination === "yes");
+      const diarrheaCount = memory.healthReports.filter((r) =>
+        r.symptoms?.includes("Diarrhea"),
+      ).length;
+      const contaminationYes = memory.waterTests.some(
+        (w) => w.contamination === "yes",
+      );
       const activeAlerts = diarrheaCount >= 3 || contaminationYes ? 1 : 0;
       res.json({
         cases,
         water,
         activeAlerts,
-        highRiskVillages: Math.min(8, Math.max(1, Math.floor((cases + water) / 5))),
+        highRiskVillages: Math.min(
+          8,
+          Math.max(1, Math.floor((cases + water) / 5)),
+        ),
       });
     } catch (e) {
       res.status(500).json({ error: "Failed to load stats" });
