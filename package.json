@@ -23,6 +23,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "idb": "^8.0.3",
