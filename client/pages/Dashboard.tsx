@@ -213,7 +213,7 @@ export default function Dashboard() {
 
     load();
 
-    let channel: ReturnType<NonNullable<typeof supabase>["channel"]> | null = null;
+    let channel: any | null = null;
     if (hasSupabase && supabase) {
       channel = supabase
         .channel("realtime-stats")
