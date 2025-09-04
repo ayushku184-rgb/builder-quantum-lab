@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import KPIStat from "@/components/ui/kpi-card";
 import SiteFooter from "@/components/ui/site-footer";
 import SiteHeader from "@/components/ui/site-header";
+import { supabase, hasSupabase } from "@/lib/supabase";
 
 function MapSVG({
   villages,
