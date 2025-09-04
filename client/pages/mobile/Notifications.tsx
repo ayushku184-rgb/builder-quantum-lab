@@ -38,7 +38,7 @@ export default function Notifications() {
       const queued = await getAllQueued();
       const reports = queued
         .filter((q) => q.type === "healthReport")
-        .map((q) => q.value ?? (q as any))
+        .map((q) => (q as any).value ?? (q as any))
         .map((x: any) => x.payload ?? x);
       const waters = queued
         .filter((q) => q.type === "waterTest")
