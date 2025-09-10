@@ -1,12 +1,13 @@
 {
   "name": "health-surveillance-mobile",
   "version": 2,
+  "buildCommand": "pnpm -C .. build:mobile",
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist/mobile"
       }
     }
   ],
