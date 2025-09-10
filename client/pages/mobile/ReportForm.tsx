@@ -5,6 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { t } from "@/lib/i18n";
 import { enqueue } from "@/lib/offline";
+import { toast } from "sonner";
 
 const SYMPTOMS = [
   "Fever",
@@ -44,7 +45,10 @@ export default function ReportForm() {
       createdAt: Date.now(),
     };
     await enqueue("healthReport", payload);
-    alert("Saved (offline-first). Will sync when online.");
+    toast.success("Submitted successfully", {
+      description: "Thank you for your valuable contribution!",
+      duration: 3500,
+    });
     setName("");
     setAge("");
     setSymptoms([]);
