@@ -103,11 +103,11 @@ export default function MobileLayout() {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-svh flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 to-white">
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-slate-900 text-white rounded-b-xl shadow">
-        <div className="font-semibold">Community Care</div>
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-slate-900 text-white rounded-b-xl shadow min-h-16 px-4 pt-[env(safe-area-inset-top)] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+        <div className="font-semibold truncate max-w-[60%] sm:max-w-none text-sm sm:text-base">Community Care</div>
         <div className="relative">
           <button
-            className="inline-flex items-center gap-2 px-2 py-1 rounded bg-white/10"
+            className="inline-flex items-center gap-2 px-2 py-1 rounded bg-white/10 text-xs sm:text-sm"
             onClick={() => setOpen((o) => !o)}
             aria-haspopup="menu"
             aria-expanded={open}
