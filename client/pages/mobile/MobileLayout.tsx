@@ -137,10 +137,10 @@ export default function MobileLayout() {
           )}
         </div>
       </header>
-      <main className="flex-1 p-3 pb-20">
+      <main className="flex-1 p-3 pb-[calc(80px+env(safe-area-inset-bottom))]">
         <Outlet />
       </main>
-      <nav className="fixed bottom-0 left-0 right-0 w-full bg-white border-t rounded-t-xl grid grid-cols-4 gap-1 p-2 z-50">
+      <nav className="fixed bottom-0 left-0 right-0 w-full bg-white border-t rounded-t-xl grid grid-cols-4 gap-1 p-2 pb-[env(safe-area-inset-bottom)] z-50">
         <Tab
           to="/app"
           icon={<Home className="w-5 h-5" />}
