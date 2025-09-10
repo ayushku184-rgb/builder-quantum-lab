@@ -1,12 +1,13 @@
 {
   "name": "health-surveillance-web",
   "version": 2,
+  "buildCommand": "pnpm -C .. build:web",
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist/web"
       }
     }
   ],
