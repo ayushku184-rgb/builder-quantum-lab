@@ -1,5 +1,4 @@
 import { openDB, DBSchema } from "idb";
-import { supabase, hasSupabase } from "@/lib/supabase";
 
 interface OfflineDB extends DBSchema {
   queue: {
@@ -46,48 +45,7 @@ export async function remove(id: string) {
   await db.delete(STORE, id);
 }
 
-async function syncWithSupabase() {
-  if (!hasSupabase || !supabase) return false;
-  const items = await getAllQueued();
-  for (const item of items) {
-    try {
-      if (item.type === "healthReport") {
-        const { error } = await supabase.from("health_reports").insert({
-          name: item.payload.name ?? null,
-          age: item.payload.age ?? null,
-          symptoms: item.payload.symptoms ?? null,
-          village: item.payload.village ?? null,
-          photo: item.payload.photo ?? null,
-          created_at: new Date(
-            item.payload.createdAt ?? Date.now(),
-          ).toISOString(),
-        });
-        if (error) throw error;
-      } else {
-        const { error } = await supabase.from("water_tests").insert({
-          ph: item.payload.ph ?? null,
-          turbidity: item.payload.turbidity ?? null,
-          contamination: item.payload.contamination ?? null,
-          location: item.payload.location ?? null,
-          created_at: new Date(
-            item.payload.createdAt ?? Date.now(),
-          ).toISOString(),
-        });
-        if (error) throw error;
-      }
-      await remove(item.id);
-    } catch (e) {
-      // keep for retry
-    }
-  }
-  return true;
-}
-
 export async function syncWithServer(baseUrl = "") {
-  if (hasSupabase && supabase) {
-    const ok = await syncWithSupabase();
-    if (ok) return;
-  }
   const items = await getAllQueued();
   for (const item of items) {
     try {
@@ -112,5 +70,6 @@ export function setupOnlineSync(baseUrl = "") {
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") run();
   });
+  // initial attempt
   run();
 }
