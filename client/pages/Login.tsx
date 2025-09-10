@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import SiteHeader from "@/components/ui/site-header";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -22,7 +23,8 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-teal-100 flex items-center justify-center p-6">
+    <div className="min-h-screen pt-16 bg-gradient-to-br from-indigo-100 via-purple-50 to-teal-100 flex items-center justify-center p-6">
+      <div className="fixed top-0 left-0 right-0 z-50"><SiteHeader /></div>
       <div className="glass-card rounded-3xl p-8 w-full max-w-md mx-auto">
         {/* Header with Avatar */}
         <div className="text-center mb-8">
