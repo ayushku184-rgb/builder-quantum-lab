@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
-import { Shield } from "lucide-react";
 
 export function InteractiveLogo() {
   return (
     <Link
       to="/dashboard"
-      className="group relative inline-flex items-center justify-center w-10 h-10 rounded-lg overflow-hidden"
+      className="inline-flex items-center justify-center w-10 h-10"
       title="SwasthyaSetu"
+      aria-label="SwasthyaSetu Home"
     >
-      <span className="absolute inset-0 rounded-lg bg-gradient-to-tr from-blue-500 via-cyan-400 to-violet-500 opacity-80 group-hover:opacity-100 transition-opacity" />
-      <span className="absolute -inset-1 rounded-lg bg-gradient-to-tr from-blue-500 via-cyan-400 to-violet-500 opacity-20 group-hover:opacity-50 transition-opacity" />
-      <span className="relative z-10 grid place-items-center w-full h-full text-white">
-        <Shield className="w-6 h-6 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
-      </span>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets%2F31d63168d6704ed39c45fa67e82c61be%2F76ac77f61a034ec5aba0266e31d45a09?format=webp&width=128"
+        alt="SwasthyaSetu logo"
+        className="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-white"
+        loading="eager"
+        decoding="async"
+      />
     </Link>
   );
 }
