@@ -34,6 +34,7 @@ export default function WaterTest() {
     toast.success("Submitted successfully", {
       description: "Thank you for your valuable contribution!",
       duration: 3500,
+      icon: "🎉",
     });
     setPh("");
     setTurbidity("");
