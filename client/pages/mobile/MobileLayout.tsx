@@ -103,7 +103,6 @@ export default function MobileLayout() {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-svh flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 to-white">
-      <Splash />
       <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-slate-900 text-white rounded-b-xl shadow">
         <div className="font-semibold">Community Care</div>
         <div className="relative">
@@ -138,10 +137,10 @@ export default function MobileLayout() {
           )}
         </div>
       </header>
-      <main className="flex-1 p-3">
+      <main className="flex-1 p-3 pb-20">
         <Outlet />
       </main>
-      <nav className="sticky bottom-0 bg-white border-t rounded-t-xl grid grid-cols-4 gap-1 p-2">
+      <nav className="fixed bottom-0 left-0 right-0 w-full bg-white border-t rounded-t-xl grid grid-cols-4 gap-1 p-2 z-50">
         <Tab
           to="/app"
           icon={<Home className="w-5 h-5" />}
