@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { t } from "@/lib/i18n";
 import { enqueue } from "@/lib/offline";
+import { toast } from "sonner";
 
 export default function WaterTest() {
   const [ph, setPh] = useState<number | "">("");
@@ -30,7 +31,10 @@ export default function WaterTest() {
       createdAt: Date.now(),
     };
     await enqueue("waterTest", payload);
-    alert("Saved (offline-first). Will sync when online.");
+    toast.success("Submitted successfully", {
+      description: "Thank you for your valuable contribution!",
+      duration: 3500,
+    });
     setPh("");
     setTurbidity("");
     setContamination("no");
