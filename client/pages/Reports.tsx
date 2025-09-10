@@ -40,85 +40,20 @@ export default function Reports() {
   } | null>(null);
 
   const healthReports = [
-    { patientId: "Eoype", age: 75, io: 85, symptoms: "70.00", date: "500%" },
-    { patientId: "Mar", age: 60, io: 41, symptoms: "75.00", date: "400%" },
-    { patientId: "Symptoms", age: 50, io: 32, symptoms: "90.00", date: "200%" },
-    { patientId: "Xi", age: 50, io: 58, symptoms: "80.00", date: "200%" },
-    { patientId: "XX", age: 50, io: 54, symptoms: "70.00", date: "400%" },
-    { patientId: "X", age: 56, io: 51, symptoms: "60.00", date: "200%" },
+    { patientId: "E001", age: 75, io: 85, symptoms: "Fever, Cough", date: "2025-09-07" },
+    { patientId: "E002", age: 60, io: 41, symptoms: "Diarrhea", date: "2025-09-07" },
+    { patientId: "E003", age: 50, io: 32, symptoms: "Malaria Suspected", date: "2025-09-06" },
+    { patientId: "E004", age: 50, io: 58, symptoms: "Typhoid Suspected", date: "2025-09-06" },
+    { patientId: "E005", age: 50, io: 54, symptoms: "Headache", date: "2025-09-05" },
+    { patientId: "E006", age: 56, io: 51, symptoms: "Fatigue", date: "2025-09-05" },
   ];
 
   const waterTestReports = [
-    {
-      sourceLocation: "Sourcel",
-      turbidity: 15.0,
-      ph: 60,
-      tubritate: "Contamination Flag",
-      date: "200%",
-    },
-    {
-      sourceLocation: "pH",
-      turbidity: 15.0,
-      ph: 7,
-      tubritate: "102200%",
-      date: "200%",
-    },
-    {
-      sourceLocation: "Typsoid",
-      turbidity: 15.0,
-      ph: 5,
-      tubritate: "30000%",
-      date: "600%",
-    },
-    {
-      sourceLocation: "Tyh",
-      turbidity: 15.0,
-      ph: 5,
-      tubritate: "50220%",
-      date: "100%",
-    },
-    {
-      sourceLocation: "Malaria",
-      turbidity: 15.0,
-      ph: 56,
-      tubritate: "60020%",
-      date: "100%",
-    },
-    {
-      sourceLocation: "Tns",
-      turbidity: 15.0,
-      ph: 50,
-      tubritate: "50220%",
-      date: "200%",
-    },
-    {
-      sourceLocation: "Malaria",
-      turbidity: 25.0,
-      ph: 45,
-      tubritate: "50000%",
-      date: "200%",
-    },
-    {
-      sourceLocation: "Thy",
-      turbidity: 26.0,
-      ph: 10,
-      tubritate: "50000%",
-      date: "200%",
-    },
-    {
-      sourceLocation: "Other",
-      turbidity: 45.0,
-      ph: 101,
-      tubritate: "60020%",
-      date: "400%",
-    },
-    {
-      sourceLocation: "Other",
-      turbidity: 49.0,
-      ph: 71,
-      tubritate: "50220%",
-      date: "200%",
-    },
+    { sourceLocation: "Well A", turbidity: 3.5, ph: 7.2, remarks: "Within limits", date: "2025-09-07" },
+    { sourceLocation: "River Point B", turbidity: 12.0, ph: 6.8, remarks: "Slightly turbid", date: "2025-09-07" },
+    { sourceLocation: "Stream C", turbidity: 20.5, ph: 6.5, remarks: "Contamination flag", date: "2025-09-06" },
+    { sourceLocation: "Handpump D", turbidity: 4.2, ph: 7.0, remarks: "Clear", date: "2025-09-06" },
+    { sourceLocation: "Lake E", turbidity: 28.0, ph: 6.3, remarks: "Unsafe", date: "2025-09-05" },
   ];
 
   return (
@@ -171,7 +106,7 @@ export default function Reports() {
                     <TableRow>
                       <TableHead>Patient ID</TableHead>
                       <TableHead>Age</TableHead>
-                      <TableHead>Io</TableHead>
+                      <TableHead>Score</TableHead>
                       <TableHead>Symptoms</TableHead>
                       <TableHead>Date</TableHead>
                     </TableRow>
@@ -223,9 +158,9 @@ export default function Reports() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Source Location</TableHead>
-                      <TableHead>Turbidly</TableHead>
+                      <TableHead>Turbidity</TableHead>
                       <TableHead>pH</TableHead>
-                      <TableHead>Tubritate Marid clogs</TableHead>
+                      <TableHead>Remarks</TableHead>
                       <TableHead>Date</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -252,7 +187,7 @@ export default function Reports() {
                         <TableCell>{report.ph}</TableCell>
                         <TableCell>
                           <span className="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md text-xs font-medium">
-                            {report.tubritate}
+                            {report.remarks}
                           </span>
                         </TableCell>
                         <TableCell className="text-gray-500">
