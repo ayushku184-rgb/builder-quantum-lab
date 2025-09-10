@@ -24,92 +24,19 @@ import SiteHeader from "@/components/ui/site-header";
 
 export default function Alerts() {
   const outbreakAlerts = [
-    {
-      village: "Khanpur",
-      suspectedDisease: "35",
-      waterQuality: "20.00",
-      date: "500%",
-    },
-    {
-      village: "Diarrhea",
-      suspectedDisease: "35",
-      waterQuality: "75.00",
-      date: "400%",
-    },
-    {
-      village: "Ramtr Shanti Nagar",
-      suspectedDisease: "120",
-      waterQuality: "Unsafe",
-      date: "400%",
-    },
-    {
-      village: "Lian",
-      suspectedDisease: "120",
-      waterQuality: "80.00",
-      date: "200%",
-    },
-    {
-      village: "Siploek X",
-      suspectedDisease: "80",
-      waterQuality: "80.00",
-      date: "400%",
-    },
-    {
-      village: "Typhoid C",
-      suspectedDisease: "80",
-      waterQuality: "60.00",
-      date: "200%",
-    },
-    {
-      village: "XX",
-      suspectedDisease: "80",
-      waterQuality: "60.00",
-      date: "200%",
-    },
-    {
-      village: "Malaria",
-      suspectedDisease: "56",
-      waterQuality: "80.00",
-      date: "200%",
-    },
+    { village: "Khanpur", suspectedDisease: "Diarrhea", waterQuality: "Moderate", date: "2025-09-07" },
+    { village: "Shanti Nagar", suspectedDisease: "Typhoid", waterQuality: "Unsafe", date: "2025-09-07" },
+    { village: "Lian", suspectedDisease: "Malaria", waterQuality: "Moderate", date: "2025-09-06" },
+    { village: "Siploek", suspectedDisease: "Fever", waterQuality: "Safe", date: "2025-09-05" },
+    { village: "Rampur", suspectedDisease: "Dengue", waterQuality: "Safe", date: "2025-09-05" },
   ];
 
   const waterQualityData = [
-    {
-      village: "Diarrheid",
-      age: "31",
-      no: "30",
-      waterQuality: "70.00",
-      date: "500%",
-    },
-    {
-      village: "Tyh",
-      age: "60",
-      no: "23",
-      waterQuality: "55.00",
-      date: "500%",
-    },
-    {
-      village: "Thy",
-      age: "60",
-      no: "39",
-      waterQuality: "60.00",
-      date: "200%",
-    },
-    {
-      village: "Otse",
-      age: "50",
-      no: "88",
-      waterQuality: "70.00",
-      date: "200%",
-    },
-    {
-      village: "Other",
-      age: "50",
-      no: "89",
-      waterQuality: "80.00",
-      date: "200%",
-    },
+    { village: "Khanpur", age: "31", no: "30", waterQuality: "70.00", date: "2025-09-07" },
+    { village: "Shanti Nagar", age: "60", no: "23", waterQuality: "55.00", date: "2025-09-07" },
+    { village: "Lian", age: "60", no: "39", waterQuality: "60.00", date: "2025-09-06" },
+    { village: "Siploek", age: "50", no: "88", waterQuality: "70.00", date: "2025-09-06" },
+    { village: "Rampur", age: "50", no: "89", waterQuality: "80.00", date: "2025-09-05" },
   ];
 
   const [alerts, setAlerts] = useState<
@@ -123,13 +50,10 @@ export default function Alerts() {
   });
 
   const alertHistory = [
-    { date: "2023-10-22", status: "Pending", detail: "" },
-    { date: "", status: "", detail: "Centri Santinmeli (Malaria)" },
-    { date: "", status: "", detail: "Well Acknowledged" },
-    { date: "", status: "Acknowledged", detail: "Disease" },
-    { date: "", status: "Pending", detail: "Aetr Filrarts" },
-    { date: "", status: "Resolved", detail: "Contaminated Well" },
-    { date: "", status: "Resolved", detail: "Fever Spike" },
+    { date: "2025-08-28", status: "Pending", detail: "Possible outbreak reported" },
+    { date: "2025-08-29", status: "Acknowledged", detail: "Alert acknowledged" },
+    { date: "2025-08-30", status: "Resolved", detail: "Contaminated well treated" },
+    { date: "2025-09-01", status: "Resolved", detail: "Fever spike contained" },
   ];
 
   const [selectedOutbreakRow, setSelectedOutbreakRow] = useState<number | null>(
@@ -275,8 +199,8 @@ export default function Alerts() {
                     <TableRow>
                       <TableHead>Village</TableHead>
                       <TableHead>Age</TableHead>
-                      <TableHead>No</TableHead>
-                      <TableHead>No.2 Quality</TableHead>
+                      <TableHead>Samples</TableHead>
+                    <TableHead>Water Quality</TableHead>
                       <TableHead>Date</TableHead>
                     </TableRow>
                   </TableHeader>
