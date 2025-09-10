@@ -212,30 +212,10 @@ export default function Dashboard() {
 
     load();
 
-    let channel: any | null = null;
-    if (hasSupabase && supabase) {
-      channel = supabase
-        .channel("realtime-stats")
-        .on(
-          "postgres_changes",
-          { event: "INSERT", schema: "public", table: "health_reports" },
-          () => load(),
-        )
-        .on(
-          "postgres_changes",
-          { event: "INSERT", schema: "public", table: "water_tests" },
-          () => load(),
-        )
-        .subscribe();
-    }
-
     return () => {
       elements.forEach((element) => {
         observer.unobserve(element);
       });
-      if (channel) {
-        supabase?.removeChannel(channel);
-      }
     };
   }, []);
 
