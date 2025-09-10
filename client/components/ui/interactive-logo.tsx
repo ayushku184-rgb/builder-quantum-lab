@@ -4,14 +4,14 @@ export function InteractiveLogo() {
   return (
     <Link
       to="/dashboard"
-      className="inline-flex items-center justify-center w-10 h-10"
+      className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14"
       title="SwasthyaSetu"
       aria-label="SwasthyaSetu Home"
     >
       <img
-        src="https://cdn.builder.io/api/v1/image/assets%2F31d63168d6704ed39c45fa67e82c61be%2F76ac77f61a034ec5aba0266e31d45a09?format=webp&width=128"
+        src="https://cdn.builder.io/api/v1/image/assets%2F31d63168d6704ed39c45fa67e82c61be%2F76ac77f61a034ec5aba0266e31d45a09?format=webp&width=256"
         alt="SwasthyaSetu logo"
-        className="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-white"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shadow-sm ring-2 ring-white"
         loading="eager"
         decoding="async"
       />
