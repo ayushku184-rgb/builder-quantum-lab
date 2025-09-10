@@ -24,19 +24,74 @@ import SiteHeader from "@/components/ui/site-header";
 
 export default function Alerts() {
   const outbreakAlerts = [
-    { village: "Khanpur", suspectedDisease: "Diarrhea", waterQuality: "Moderate", date: "2025-09-07" },
-    { village: "Shanti Nagar", suspectedDisease: "Typhoid", waterQuality: "Unsafe", date: "2025-09-07" },
-    { village: "Lian", suspectedDisease: "Malaria", waterQuality: "Moderate", date: "2025-09-06" },
-    { village: "Siploek", suspectedDisease: "Fever", waterQuality: "Safe", date: "2025-09-05" },
-    { village: "Rampur", suspectedDisease: "Dengue", waterQuality: "Safe", date: "2025-09-05" },
+    {
+      village: "Khanpur",
+      suspectedDisease: "Diarrhea",
+      waterQuality: "Moderate",
+      date: "2025-09-07",
+    },
+    {
+      village: "Shanti Nagar",
+      suspectedDisease: "Typhoid",
+      waterQuality: "Unsafe",
+      date: "2025-09-07",
+    },
+    {
+      village: "Lian",
+      suspectedDisease: "Malaria",
+      waterQuality: "Moderate",
+      date: "2025-09-06",
+    },
+    {
+      village: "Siploek",
+      suspectedDisease: "Fever",
+      waterQuality: "Safe",
+      date: "2025-09-05",
+    },
+    {
+      village: "Rampur",
+      suspectedDisease: "Dengue",
+      waterQuality: "Safe",
+      date: "2025-09-05",
+    },
   ];
 
   const waterQualityData = [
-    { village: "Khanpur", age: "31", no: "30", waterQuality: "70.00", date: "2025-09-07" },
-    { village: "Shanti Nagar", age: "60", no: "23", waterQuality: "55.00", date: "2025-09-07" },
-    { village: "Lian", age: "60", no: "39", waterQuality: "60.00", date: "2025-09-06" },
-    { village: "Siploek", age: "50", no: "88", waterQuality: "70.00", date: "2025-09-06" },
-    { village: "Rampur", age: "50", no: "89", waterQuality: "80.00", date: "2025-09-05" },
+    {
+      village: "Khanpur",
+      age: "31",
+      no: "30",
+      waterQuality: "70.00",
+      date: "2025-09-07",
+    },
+    {
+      village: "Shanti Nagar",
+      age: "60",
+      no: "23",
+      waterQuality: "55.00",
+      date: "2025-09-07",
+    },
+    {
+      village: "Lian",
+      age: "60",
+      no: "39",
+      waterQuality: "60.00",
+      date: "2025-09-06",
+    },
+    {
+      village: "Siploek",
+      age: "50",
+      no: "88",
+      waterQuality: "70.00",
+      date: "2025-09-06",
+    },
+    {
+      village: "Rampur",
+      age: "50",
+      no: "89",
+      waterQuality: "80.00",
+      date: "2025-09-05",
+    },
   ];
 
   const [alerts, setAlerts] = useState<
@@ -50,9 +105,21 @@ export default function Alerts() {
   });
 
   const alertHistory = [
-    { date: "2025-08-28", status: "Pending", detail: "Possible outbreak reported" },
-    { date: "2025-08-29", status: "Acknowledged", detail: "Alert acknowledged" },
-    { date: "2025-08-30", status: "Resolved", detail: "Contaminated well treated" },
+    {
+      date: "2025-08-28",
+      status: "Pending",
+      detail: "Possible outbreak reported",
+    },
+    {
+      date: "2025-08-29",
+      status: "Acknowledged",
+      detail: "Alert acknowledged",
+    },
+    {
+      date: "2025-08-30",
+      status: "Resolved",
+      detail: "Contaminated well treated",
+    },
     { date: "2025-09-01", status: "Resolved", detail: "Fever spike contained" },
   ];
 
@@ -200,7 +267,7 @@ export default function Alerts() {
                       <TableHead>Village</TableHead>
                       <TableHead>Age</TableHead>
                       <TableHead>Samples</TableHead>
-                    <TableHead>Water Quality</TableHead>
+                      <TableHead>Water Quality</TableHead>
                       <TableHead>Date</TableHead>
                     </TableRow>
                   </TableHeader>

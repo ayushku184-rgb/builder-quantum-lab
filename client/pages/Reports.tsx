@@ -40,20 +40,86 @@ export default function Reports() {
   } | null>(null);
 
   const healthReports = [
-    { patientId: "E001", age: 75, io: 85, symptoms: "Fever, Cough", date: "2025-09-07" },
-    { patientId: "E002", age: 60, io: 41, symptoms: "Diarrhea", date: "2025-09-07" },
-    { patientId: "E003", age: 50, io: 32, symptoms: "Malaria Suspected", date: "2025-09-06" },
-    { patientId: "E004", age: 50, io: 58, symptoms: "Typhoid Suspected", date: "2025-09-06" },
-    { patientId: "E005", age: 50, io: 54, symptoms: "Headache", date: "2025-09-05" },
-    { patientId: "E006", age: 56, io: 51, symptoms: "Fatigue", date: "2025-09-05" },
+    {
+      patientId: "E001",
+      age: 75,
+      io: 85,
+      symptoms: "Fever, Cough",
+      date: "2025-09-07",
+    },
+    {
+      patientId: "E002",
+      age: 60,
+      io: 41,
+      symptoms: "Diarrhea",
+      date: "2025-09-07",
+    },
+    {
+      patientId: "E003",
+      age: 50,
+      io: 32,
+      symptoms: "Malaria Suspected",
+      date: "2025-09-06",
+    },
+    {
+      patientId: "E004",
+      age: 50,
+      io: 58,
+      symptoms: "Typhoid Suspected",
+      date: "2025-09-06",
+    },
+    {
+      patientId: "E005",
+      age: 50,
+      io: 54,
+      symptoms: "Headache",
+      date: "2025-09-05",
+    },
+    {
+      patientId: "E006",
+      age: 56,
+      io: 51,
+      symptoms: "Fatigue",
+      date: "2025-09-05",
+    },
   ];
 
   const waterTestReports = [
-    { sourceLocation: "Well A", turbidity: 3.5, ph: 7.2, remarks: "Within limits", date: "2025-09-07" },
-    { sourceLocation: "River Point B", turbidity: 12.0, ph: 6.8, remarks: "Slightly turbid", date: "2025-09-07" },
-    { sourceLocation: "Stream C", turbidity: 20.5, ph: 6.5, remarks: "Contamination flag", date: "2025-09-06" },
-    { sourceLocation: "Handpump D", turbidity: 4.2, ph: 7.0, remarks: "Clear", date: "2025-09-06" },
-    { sourceLocation: "Lake E", turbidity: 28.0, ph: 6.3, remarks: "Unsafe", date: "2025-09-05" },
+    {
+      sourceLocation: "Well A",
+      turbidity: 3.5,
+      ph: 7.2,
+      remarks: "Within limits",
+      date: "2025-09-07",
+    },
+    {
+      sourceLocation: "River Point B",
+      turbidity: 12.0,
+      ph: 6.8,
+      remarks: "Slightly turbid",
+      date: "2025-09-07",
+    },
+    {
+      sourceLocation: "Stream C",
+      turbidity: 20.5,
+      ph: 6.5,
+      remarks: "Contamination flag",
+      date: "2025-09-06",
+    },
+    {
+      sourceLocation: "Handpump D",
+      turbidity: 4.2,
+      ph: 7.0,
+      remarks: "Clear",
+      date: "2025-09-06",
+    },
+    {
+      sourceLocation: "Lake E",
+      turbidity: 28.0,
+      ph: 6.3,
+      remarks: "Unsafe",
+      date: "2025-09-05",
+    },
   ];
 
   return (
