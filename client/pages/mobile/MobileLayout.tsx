@@ -103,12 +103,11 @@ export default function MobileLayout() {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-svh flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 to-white">
-      <Splash />
-      <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-slate-900 text-white rounded-b-xl shadow">
-        <div className="font-semibold">Community Care</div>
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-slate-900 text-white rounded-b-xl shadow min-h-16 px-4 pt-[env(safe-area-inset-top)] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+        <div className="font-semibold truncate max-w-[60%] sm:max-w-none text-sm sm:text-base">Community Care</div>
         <div className="relative">
           <button
-            className="inline-flex items-center gap-2 px-2 py-1 rounded bg-white/10"
+            className="inline-flex items-center gap-2 px-2 py-1 rounded bg-white/10 text-xs sm:text-sm"
             onClick={() => setOpen((o) => !o)}
             aria-haspopup="menu"
             aria-expanded={open}
@@ -138,10 +137,10 @@ export default function MobileLayout() {
           )}
         </div>
       </header>
-      <main className="flex-1 p-3">
+      <main className="flex-1 p-3 pt-[calc(64px+env(safe-area-inset-top))] pb-[calc(80px+env(safe-area-inset-bottom))]">
         <Outlet />
       </main>
-      <nav className="sticky bottom-0 bg-white border-t rounded-t-xl grid grid-cols-4 gap-1 p-2">
+      <nav className="fixed bottom-0 left-0 right-0 w-full bg-white border-t rounded-t-xl grid grid-cols-4 gap-1 p-2 pb-[env(safe-area-inset-bottom)] z-50">
         <Tab
           to="/app"
           icon={<Home className="w-5 h-5" />}

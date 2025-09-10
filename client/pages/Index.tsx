@@ -4,9 +4,9 @@ import {
   Droplet,
   AlertTriangle,
   TrendingUp,
-  User,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import SiteHeader from "@/components/ui/site-header";
 
 export default function Index() {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
@@ -74,66 +74,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-blue-50">
       {/* Header */}
-      <header className="glass-header-bright px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <div className="flex items-center space-x-2">
-              <a
-                href="/dashboard"
-                className="group relative inline-flex items-center justify-center w-10 h-10 rounded-lg overflow-hidden"
-                title="Go to Dashboard"
-              >
-                <span className="absolute inset-0 rounded-lg bg-gradient-to-tr from-blue-500 via-cyan-400 to-violet-500 opacity-80 group-hover:opacity-100 transition-opacity" />
-                <span className="absolute -inset-1 rounded-lg blur-md bg-gradient-to-tr from-blue-500 via-cyan-400 to-violet-500 opacity-30 group-hover:opacity-60 transition-opacity" />
-                <span className="relative z-10 grid place-items-center w-full h-full text-white">
-                  <svg
-                    className="w-6 h-6"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2l7 4v6c0 5-3.6 9.4-7 10-3.4-.6-7-5-7-10V6l7-4z" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-            <nav className="flex space-x-8">
-              <a
-                href="/dashboard"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Dashboard
-              </a>
-              <a
-                href="/reports"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Reports
-              </a>
-              <a
-                href="/alerts"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                Alerts
-              </a>
-              <a
-                href="/ai-risk"
-                className="text-blue-600 font-medium border-b-2 border-blue-600 pb-1"
-              >
-                AI Risk
-              </a>
-            </nav>
-          </div>
-          <button
-            onClick={() => handleIconClick("profile", "user profile")}
-            className={`w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-blue-700 hover:scale-110 hover:shadow-lg cursor-pointer ${
-              activeIcon === "profile" ? "scale-95" : ""
-            }`}
-            title="User Profile"
-          >
-            <User className="w-6 h-6 text-white transition-transform duration-200 hover:scale-110" />
-          </button>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Main Content */}
       <main className="p-6 space-y-6">

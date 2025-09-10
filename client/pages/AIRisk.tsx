@@ -15,16 +15,10 @@ import SiteHeader from "@/components/ui/site-header";
 
 export default function AIRisk() {
   const aiRiskRows = [
-    { village: "Khandur", cases: 35, water: "20.00", risk: "High" },
-    { village: "Diarrhea", cases: 35, water: "75.00", risk: "Medium" },
-    {
-      village: "Ramtr Shanti Nagar",
-      cases: 120,
-      water: "Unsafe",
-      risk: "Critical",
-    },
-    { village: "Ujan", cases: 21, water: "80.00", risk: "Medium" },
-    { village: "Typhoid C", cases: 56, water: "60.00", risk: "High" },
+    { village: "Khanpur", cases: 35, water: "Moderate", risk: "High" },
+    { village: "Shanti Nagar", cases: 48, water: "Unsafe", risk: "Critical" },
+    { village: "Ujan", cases: 21, water: "Good", risk: "Medium" },
+    { village: "Rampur", cases: 56, water: "Fair", risk: "High" },
   ];
 
   return (
