@@ -60,15 +60,18 @@ export default function ReportForm() {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-semibold">{t("healthReport")}</h2>
-      <div className="rounded-xl bg-white p-4 shadow space-y-4">
+      <div className="rounded-xl bg-white p-4 shadow space-y-4 max-w-md w-full mx-auto">
         <div>
           <Label>{t("name")}</Label>
-          <Input value={name} onChange={(e) => setName(e.target.value)} />
+          <Input value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />
         </div>
         <div>
           <Label>{t("age")}</Label>
           <Input
             type="number"
+            inputMode="numeric"
+            min={0}
+            max={120}
             value={age}
             onChange={(e) =>
               setAge(e.target.value ? Number(e.target.value) : "")
@@ -77,11 +80,11 @@ export default function ReportForm() {
         </div>
         <div>
           <Label>{t("symptoms")}</Label>
-          <div className="mt-2 grid grid-cols-2 gap-2">
+          <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {SYMPTOMS.map((s) => (
               <label
                 key={s}
-                className="flex items-center gap-2 rounded border p-2"
+                className="flex items-center gap-3 rounded-lg border p-3 text-sm"
               >
                 <Checkbox
                   checked={symptoms.includes(s)}
@@ -97,7 +100,7 @@ export default function ReportForm() {
           <select
             value={village}
             onChange={(e) => setVillage(e.target.value)}
-            className="mt-2 w-full rounded-md border px-3 py-2"
+            className="mt-2 w-full rounded-md border px-3 py-2 text-sm"
           >
             {["Village A", "Village B", "Village C"].map((v) => (
               <option key={v}>{v}</option>
@@ -109,8 +112,9 @@ export default function ReportForm() {
           <input
             type="file"
             accept="image/*"
+            capture="environment"
             onChange={(e) => onFile(e.target.files?.[0])}
-            className="mt-2"
+            className="mt-2 w-full"
           />
           {photo && (
             <img
